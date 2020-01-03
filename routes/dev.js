@@ -1,12 +1,7 @@
 const express = require('express');
 const router = express.Router();
+const {getDev}= require('../controllers/dev')
 
-router.get('/', (req, res) => {
-  res.send(' GET - Hello from here!')
-});
-
-router.post('/', (req, res) => {
-  res.send(' POST - Hello from here!')
-});
+router.route('/').get(getDev)
 
 module.exports = router;

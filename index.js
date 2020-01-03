@@ -3,10 +3,13 @@ const bodyParser = require('body-parser')
 const path = require('path');
 const dotenv = require('dotenv')
 const cors = require('cors');
+const connectDB = require('./config/db')
 
 //load env vars
 dotenv.config({path : './config/config.env'});
 
+//DB connection
+connectDB();
 
 //initialise express
 const app = express();
@@ -24,4 +27,4 @@ const PORT = process.env.PORT|| 4200 ;
 
 app.listen(PORT, () => {
   console.log(`Server is up and running on port ${PORT}`)
-})
+});
